@@ -1,0 +1,48 @@
+<div>
+    <app-menu></app-menu>
+</div>
+<h1 class="Ford">DashBoard Ford</h1>
+<hr>
+<section class="d-flex gap-3 justify-content-around "> 
+    <div class="shadow border border-primary-subtle p-3"> 
+        <H2>Veiculos</H2>
+        <select (change)="onChangeSelect($event)">
+            @for (carro of veiculos; track carro.id){
+                <option value="{{ carro.id }}"> {{ carro.vehicle }}</option>
+            }
+        </select>
+    </div>
+
+    <app-card class="shadow border border-primary-subtle p-2"
+     [titulo]=" 'Total de Vendas' " [valor]="veiculoSelecionado.volumetotal"> </app-card>
+
+    <app-card class="shadow border border-primary-subtle p-2"
+     [titulo]=" 'Conectados' " [valor]="veiculoSelecionado.connected"> </app-card>
+
+    <app-card class="shadow border border-primary-subtle p-2" 
+    [titulo]=" 'Upd. Softwar' " [valor]="veiculoSelecionado.softwareUpdates"> </app-card>
+
+</section> 
+
+
+<section>
+    <img class="imagemCarro" src= "{{veiculoSelecionado.img }}">
+</section>
+ 
+<section >
+    <app-car-table
+     [vin]="veiculoSelecionado.vin"
+     [lat]="vinInfos.lat"
+     [long]="vinInfos.long"
+     [nivelCombustivel]="vinInfos.nivelCombustivel"
+     [odometro]="vinInfos.odometro"
+     [status]="vinInfos.status"
+     >
+    </app-car-table>
+</section> 
+
+<footer class="rodape-azul">
+    <div class="conteudo-rodape">
+       
+    </div>
+</footer>

@@ -1,0 +1,25 @@
+<section>
+<table class="mt-1 table">
+    <thead >
+        <tr class=>
+            <th class="p-3">VIN</th>
+            <th class="p-3">ODOMETRO</th>
+            <th class="p-3">NIVEL DO COMBUSTIVEL</th>
+            <th class="p-3">STATUS</th>
+            <th class="p-3">LAT</th>
+            <th class="p-3">LOG</th>
+         </tr>
+    </thead>
+
+    <tbody>
+        <td class="d-flex">
+            <input (change)="onChangeVin($event)" class="w-100" type="text" placeholder="{{ vin }}" value="{{ vin }}" >
+        </td>
+        <td class="p-2">{{odometro}}</td>
+        <td class="p-2"> {{nivelCombustivel}}% </td>
+        <td class="p-2">{{status.toLocaleUpperCase()}}</td>
+        <td class="p-2">{{lat}}</td>
+        <td class="p-2">{{long}}</td>
+    </tbody>
+</table>
+</section>

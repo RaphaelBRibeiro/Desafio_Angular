@@ -1,0 +1,25 @@
+.menu-toggle {
+  
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: fixed;
+  left: 10px;
+  top: 0;
+  padding: 10px
+
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 15px;
+}

@@ -1,0 +1,9 @@
+<div class="carousel-container" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
+  <button class="nav-button left" (click)="prev()">‹</button>
+
+  <div class="carousel-slide">
+    <img [src]="'ImagensCarrosel/'+images[currentIndex]" alt="Imagem do carrossel">
+  </div>
+
+  <button class="nav-button right" (click)="next()">›</button>
+</div>

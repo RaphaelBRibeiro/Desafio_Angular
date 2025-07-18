@@ -1,7 +1,8 @@
 .carousel-container {
   position: relative;
-  width: 1200px;
-  height: 600px;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
   margin: auto;
   overflow: hidden;
 }
@@ -32,4 +33,14 @@
 
 .nav-button.right {
   right: 10px;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background-color: #ff0080;
+  width: 0%;
+  animation: progressAnim 5s linear infinite;
 }

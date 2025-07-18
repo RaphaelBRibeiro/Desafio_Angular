@@ -10,7 +10,8 @@ export class CarouselComponent implements OnInit {
     'ford-expedition.jpg',
     'ford_mustang_mach.jpg',
     'ford-everest-titanium.png',
-    'Ford-Mustang-Mach-E.jpg'
+    'Ford-Mustang-Mach-E.jpg',
+    'Ranger-black.jpg'
   ];
 
   currentIndex = 0;
@@ -35,4 +36,6 @@ export class CarouselComponent implements OnInit {
   stopAutoSlide() {
     clearInterval(this.intervalId);
   }
+
+  
 }

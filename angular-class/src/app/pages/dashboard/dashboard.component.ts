@@ -5,10 +5,11 @@ import { DashboardService } from '../../services/dashboard.service';
 import { Veiculo, VinInfos } from '../../models/car';
 import { MenuComponent } from "../../components/menu/menu.component";
 import { CabecalhoComponent } from "../../components/cabecalho/cabecalho.component";
+import { RodaPeComponent } from "../../components/roda-pe/roda-pe.component";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CardComponent, CarTableComponent, MenuComponent, CabecalhoComponent],
+  imports: [CardComponent, CarTableComponent, MenuComponent, CabecalhoComponent, RodaPeComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

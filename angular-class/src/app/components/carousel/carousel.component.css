@@ -1,7 +1,7 @@
 .carousel-container {
   position: relative;
   width: 1200px;
-  height: 500px;
+  height: 600px;
   margin: auto;
   overflow: hidden;
 }
@@ -13,7 +13,7 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.nav-button {
+.nav-button { 
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -23,7 +23,7 @@
   border: none;
   padding: 10px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1;
 }
 
 .nav-button.left {

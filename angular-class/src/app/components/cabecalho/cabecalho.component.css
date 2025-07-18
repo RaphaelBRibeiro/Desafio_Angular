@@ -1,0 +1,15 @@
+.ford-logo {
+  height: 50px;
+  object-fit: contain;
+  
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  z-index: 5;
+}
+
+.header{
+position: fixed;
+}

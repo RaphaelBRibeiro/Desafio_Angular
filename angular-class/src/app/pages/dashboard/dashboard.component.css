@@ -35,3 +35,7 @@ body {
 .dashboard-container {
     flex: 1;
 }
+
+.app-cabecalho.hidden {
+  top: 10px;
+}

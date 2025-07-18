@@ -13,7 +13,8 @@
   position: fixed;
   left: 10px;
   top: 0;
-  padding: 10px
+  padding: 10px;
+  z-index: 10;
 
 }
 
@@ -22,4 +23,19 @@
   bottom: 0;
   left: 0;
   margin: 15px;
+}
+
+.ford-logo {
+  height: 50px;
+  object-fit: contain;
+  
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.header{
+position: fixed;
 }

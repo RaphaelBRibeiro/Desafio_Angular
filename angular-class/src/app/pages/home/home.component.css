@@ -5,11 +5,8 @@
 
 .gradient-background {
   /* Gradiente linear */
-  background: linear-gradient(to top, #373737, #ffffff); /* Exemplo de laranja para pêssego */
+  background: linear-gradient(to top, #1f2225, #ffffff); /* Exemplo de laranja para pêssego */
  
   min-height: 100vh; /* Isso garante que o elemento tenha pelo menos a altura da tela */
   width: 100%;
-}
-.app-cabecalho.hidden {
-  top: -70px;
 }

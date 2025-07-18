@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 20px;
+  z-index: 6;
+}
+
+.box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1;
+  min-width: 280px; /* Minimum width for responsiveness */
+  max-width: 350px; /* Maximum width to prevent boxes from becoming too wide */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  color: #003478;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    margin-bottom: 25px; /* Add spacing when stacked vertically */
+  }
+}

@@ -8,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CarouselComponent implements OnInit {
   images = [
     'ford-expedition.jpg',
+    'ford-focus.png',
     'ford_mustang_mach.jpg',
     'ford-everest-titanium.png',
-    'Ford-Mustang-Mach-E.jpg',
-    'Ranger-black.jpg'
+    'Ford-Mustang-Mach-E.jpg'
+    
   ];
 
   currentIndex = 0;

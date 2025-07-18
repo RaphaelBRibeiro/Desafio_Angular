@@ -1,9 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CardComponent } from "../../components/card/card.component";
-import { CarTableComponent } from "../../components/car-table/car-table.component";
 import { DashboardService } from '../../services/dashboard.service';
 import { Veiculo, VinInfos } from '../../models/car';
+import { Component, inject, OnInit } from '@angular/core';
+import { CardComponent } from "../../components/card/card.component";
 import { MenuComponent } from "../../components/menu/menu.component";
+import { CarTableComponent } from "../../components/car-table/car-table.component";
 
 @Component({
   selector: 'app-dashboard',

@@ -1,9 +1,7 @@
 .menu-toggle {
-  
   border: none;
   color: rgb(51, 0, 255);
   padding: 0.75rem 1.5rem;
-  
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -11,11 +9,14 @@
   font-weight: 500;
   transition: all 0.3s ease;
   position: fixed;
-  left: 0px;
   top: 0;
   padding: 10px;
   z-index: 10;
 
+}
+
+.btn-close{
+  margin-left: 0;
 }
 
 .logout{
@@ -26,7 +27,11 @@
 }
 
 .ford-logo {
-  height: 50px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
   object-fit: contain;
   
 }

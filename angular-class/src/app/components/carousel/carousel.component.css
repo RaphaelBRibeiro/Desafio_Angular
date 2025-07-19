@@ -5,6 +5,7 @@
   height: 400px;
   margin: auto;
   overflow: hidden;
+  margin-top: 0;
 }
 
 .carousel-slide img {

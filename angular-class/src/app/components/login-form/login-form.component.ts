@@ -1,42 +1,73 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-form',
-  imports: [ReactiveFormsModule],
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
 export class LoginFormComponent {
-  loginService = inject(LoginService)
-  router = inject(Router)
-    loginForm = new FormGroup({
-      nome: new FormControl("", [Validators.required]),
-      senha: new FormControl("", [Validators.required]),
-    }) 
+  userService = inject(UserService);
+  router = inject(Router);
+  isRegisterMode: boolean = false;
 
-    onSubmitLogin() {
-      const {nome, senha} = this.loginForm.value
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
 
-      if(!this.loginForm.valid || !nome || !senha){
-        alert ("Preencha todos os campos")
-        return
-      }
+  registerForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
 
-      this.loginService.login( nome, senha) .subscribe({
-        error: (erro) =>{
-          if (erro.status === 401){
-            alert ("Usario ou senha não são correspondentes")
-            return
-          }
+  onSubmitLogin() {
+    const { email, password } = this.loginForm.value;
 
-          alert("Erro interno. Tente novamente mais tarde.")     
-        },
-        next: () => {
-          this.router.navigate (["/home"])
-        }
-      })
+    if (!this.loginForm.valid || !email || !password) {
+      alert('Preencha todos os campos');
+      return;
     }
+
+    const loggedInUser = this.userService.login(email, password);
+    if (loggedInUser) {
+      sessionStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+      this.router.navigate(['/home']);
+    } else {
+      alert('Usuário ou senha inválidos.');
+    }
+  }
+
+  onSubmitRegister() {
+    const { email, password } = this.registerForm.value;
+
+    if (!this.registerForm.valid || !email || !password) {
+      alert('Preencha todos os campos');
+      return;
+    }
+
+    const newUser: User = { email, password }; // In a real app, hash the password here
+    const registered = this.userService.register(newUser);
+
+    if (registered) {
+      alert('Cadastro realizado com sucesso! Faça login.');
+      this.isRegisterMode = false; // Switch to login mode
+      this.loginForm.reset();
+      this.registerForm.reset();
+    } else {
+      alert('Usuário já existe.');
+    }
+  }
+
+  toggleMode() {
+    this.isRegisterMode = !this.isRegisterMode;
+    this.loginForm.reset();
+    this.registerForm.reset();
+  }
 }

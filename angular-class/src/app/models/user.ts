@@ -1,5 +1,4 @@
-export type Usuario = {
-    id: number
-    nome: string
-    email: string
+export interface User {
+  email: string;
+  password: string;
 }

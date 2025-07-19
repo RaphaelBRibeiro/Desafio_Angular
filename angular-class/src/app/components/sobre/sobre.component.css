@@ -5,11 +5,11 @@
   flex-wrap: wrap;
   padding: 20px;
   z-index: 6;
-  color:aqua;
+  color: transparent;
 }
 
 .box {
-  background-color: yellowgreen;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -23,7 +23,7 @@
 }
 
 .title {
-  color: #003478;
+  color: #000000;
   margin-bottom: 15px;
 }
 

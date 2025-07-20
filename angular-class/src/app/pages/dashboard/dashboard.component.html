@@ -39,6 +39,11 @@
      [status]="vinInfos.status"
      >
     </app-car-table>
+
+    <div class="fuel-bar-container">
+      <div class="fuel-bar" [style.width.%]="vinInfos.nivelCombustivel" [ngClass]="getFuelLevelClass()"></div>
+      <span class="fuel-percentage">{{ vinInfos.nivelCombustivel }}%</span>
+    </div>
 </section> 
 
 

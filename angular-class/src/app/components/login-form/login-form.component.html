@@ -1,11 +1,14 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" *ngIf="!isRegisterMode">
+  <!--campos do login - Usuario -->
   <div class="mb-3">
-    <label for="emailLogin" class="form-label">Email</label>
-    <input type="email" class="form-control" id="emailLogin" formControlName="email">
-    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="text-danger">
-      Email é obrigatório e deve ser válido.
+    <label for="usernameLogin" class="form-label">Usuário</label>
+    <input type="text" class="form-control" id="usernameLogin" formControlName="username">
+    <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="text-danger">
+      Usuário é obrigatório.
     </div>
   </div>
+
+<!--campos do login - Senha -->
   <div class="mb-3">
     <label for="passwordLogin" class="form-label">Senha</label>
     <input type="password" class="form-control" id="passwordLogin" formControlName="password">
@@ -13,18 +16,23 @@
       Senha é obrigatória.
     </div>
   </div>
+
+<!--campos do login - COnfirmar & Cadastro -->
   <button type="submit" class="btn btn-primary w-100">Login</button>
-  <button type="button" class="btn btn-link w-100 mt-2" (click)="toggleMode()">Não tem conta? Cadastre-se</button>
+  <button type="button" class="cadastro" (click)="toggleMode()">Não tem conta? Cadastre-se</button>
 </form>
 
+<!--campos de Cadastro  - Usuario com validação de cadastro do Usuario -->
 <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()" *ngIf="isRegisterMode">
   <div class="mb-3">
-    <label for="emailRegister" class="form-label">Email</label>
-    <input type="email" class="form-control" id="emailRegister" formControlName="email">
-    <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="text-danger">
-      Email é obrigatório e deve ser válido.
+    <label for="usernameRegister" class="form-label">Usuário</label>
+    <input type="text" class="form-control" id="usernameRegister" formControlName="username">
+    <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="text-danger">
+      Usuário é obrigatório.
     </div>
   </div>
+
+  <!--campos de Cadastro  - Senha com validação de cadastro da Senha-->
   <div class="mb-3">
     <label for="passwordRegister" class="form-label">Senha</label>
     <input type="password" class="form-control" id="passwordRegister" formControlName="password">
@@ -32,6 +40,9 @@
       Senha é obrigatória.
     </div>
   </div>
+
+  <!--campos de Cadastro  - Confirmar Cadastro & Volta a Login  -->
+
   <button type="submit" class="btn btn-success w-100">Cadastrar</button>
   <button type="button" class="btn btn-link w-100 mt-2" (click)="toggleMode()">Já tem conta? Faça login</button>
 </form>

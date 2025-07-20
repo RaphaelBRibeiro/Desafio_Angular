@@ -1,0 +1,8 @@
+.cadastro{
+    /*class= "btn btn-link w-100 mt-2" */
+    justify-content: center;
+    align-items: center;
+    color: rgb(158, 0, 153);
+    width: 50vh;
+    right: 50%;
+}

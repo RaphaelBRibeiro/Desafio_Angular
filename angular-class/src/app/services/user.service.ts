@@ -24,7 +24,7 @@ export class UserService {
   }
 
   register(user: User): boolean {
-    if (this.users.some(u => u.email === user.email)) {
+    if (this.users.some(u => u.username === user.username)) {
       return false; // User already exists
     }
     this.users.push(user);
@@ -32,8 +32,8 @@ export class UserService {
     return true;
   }
 
-  login(email: string, passwordHash: string): User | null {
-    const user = this.users.find(u => u.email === email && u.password === passwordHash);
+  login(username: string, passwordHash: string): User | null {
+    const user = this.users.find(u => u.username === username && u.password === passwordHash);
     return user || null;
   }
 }

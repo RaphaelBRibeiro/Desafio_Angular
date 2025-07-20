@@ -4,11 +4,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
 import { MenuComponent } from "../../components/menu/menu.component";
 import { CarTableComponent } from "../../components/car-table/car-table.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CardComponent, CarTableComponent, MenuComponent],
+  imports: [CardComponent, CarTableComponent, MenuComponent, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -52,6 +53,16 @@ export class DashboardComponent implements OnInit {
             this.vinInfos = vinInfos
           }
         })
+  }
+
+  getFuelLevelClass(): string {
+    if (this.vinInfos.nivelCombustivel < 30) {
+      return 'fuel-red';
+    } else if (this.vinInfos.nivelCombustivel >= 30 && this.vinInfos.nivelCombustivel <= 69) {
+      return 'fuel-yellow';
+    } else {
+      return 'fuel-green';
+    }
   }
 
   onChangeVin(){

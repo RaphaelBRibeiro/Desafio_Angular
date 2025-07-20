@@ -18,24 +18,24 @@ export class LoginFormComponent {
   isRegisterMode: boolean = false;
 
   loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
 
   registerForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
 
   onSubmitLogin() {
-    const { email, password } = this.loginForm.value;
+    const { username, password } = this.loginForm.value;
 
-    if (!this.loginForm.valid || !email || !password) {
+    if (!this.loginForm.valid || !username || !password) {
       alert('Preencha todos os campos');
       return;
     }
 
-    const loggedInUser = this.userService.login(email, password);
+    const loggedInUser = this.userService.login(username, password);
     if (loggedInUser) {
       sessionStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
       this.router.navigate(['/home']);
@@ -45,14 +45,14 @@ export class LoginFormComponent {
   }
 
   onSubmitRegister() {
-    const { email, password } = this.registerForm.value;
+    const { username, password } = this.registerForm.value;
 
-    if (!this.registerForm.valid || !email || !password) {
+    if (!this.registerForm.valid || !username || !password) {
       alert('Preencha todos os campos');
       return;
     }
 
-    const newUser: User = { email, password }; // In a real app, hash the password here
+    const newUser: User = { username, password }; // In a real app, hash the password here
     const registered = this.userService.register(newUser);
 
     if (registered) {

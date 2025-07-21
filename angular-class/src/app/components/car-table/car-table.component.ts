@@ -1,33 +1,38 @@
-import { Component, inject, Input, input } from '@angular/core';
-import { DashboardService } from '../../services/dashboard.service';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-car-table',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './car-table.component.html',
-  styleUrl: './car-table.component.css'
+  styleUrls: ['./car-table.component.css']
 })
 export class CarTableComponent {
-  @Input() vin: string= ""
-  @Input() odometro: number = 0
-  @Input() nivelCombustivel: number = 0
-  @Input() status: string = ""
-  @Input() lat: number = 0
-  @Input() long: number = 0
+  @Input() vin: string = "";
+  @Input() odometro: number = 0;
+  @Input() nivelCombustivel: number = 0;
+  @Input() status: string = "";
+  @Input() lat: number = 0;
+  @Input() long: number = 0;
 
-  dashBoardService = inject(DashboardService)
+  getFuelColor(): string {
+    if (this.nivelCombustivel < 29) {
+      return '#ff4d4d'; // red
+    } else if (this.nivelCombustivel >= 30 && this.nivelCombustivel <= 69) {
+      return '#ffd700'; // yellow
+    } else {
+      return '#4CAF50'; // green
+    }
+  }
 
-  onChangeVin(event: Event){
-    const vin =(event.target as HTMLInputElement).value
-    this.dashBoardService.getVinInfos(vin).subscribe({
-      error: ()  => {},
-      next:(vinInfos) => {
-        this.odometro = vinInfos.odometro
-        this.nivelCombustivel = vinInfos.nivelCombustivel
-        this.status = vinInfos.status
-        this.lat = vinInfos.lat
-        this.long = vinInfos.long
-      }
-    })
+  getStatusClass(): string {
+    if (this.status.toUpperCase() === 'ON') {
+      return 'status-on';
+    } else if (this.status.toUpperCase() === 'OFF') {
+      return 'status-off';
+    } else {
+      return ''; // Default or no specific class
+    }
   }
 }

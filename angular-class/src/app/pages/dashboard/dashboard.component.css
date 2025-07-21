@@ -1,36 +1,20 @@
-.fuel-bar-container {
-  width: 200px;
-  height: 20px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 20px;
-  position: relative;
-}
 
-.fuel-bar {
-  height: 100%;
-  border-radius: 10px;
-  transition: width 0.5s ease-in-out;
-}
-
-.fuel-red {
-  background-color: #ff4d4d;
-}
-
-.fuel-yellow {
-  background-color: #ffd700;
-}
-
-.fuel-green {
-  background-color: #4CAF50;
-}
-
-.fuel-percentage {
-  position: absolute;
-  width: 100%;
+.Ford {
   text-align: center;
-  line-height: 20px;
-  color: #333;
-  font-weight: bold;
+}
+
+.table-section {
+  margin-bottom: 50px; /* Ajuste este valor para o espaçamento desejado */
+}
+
+.gradient-background {
+  /* Gradiente linear */
+  background: linear-gradient(to top, #1f2225, #ffffff); /* Exemplo de laranja para pêssego */
+ 
+  min-height: 100vh; /* Isso garante que o elemento tenha pelo menos a altura da tela */
+  width: 100%;
+}
+
+.imagemCarro{ 
+  background-color: transparent;
 }

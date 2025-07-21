@@ -1,12 +1,14 @@
-<div class="background-image"></div>
+<div class="background-image" [class.opaque]="isLoginModalOpen"></div>
 
-<div class="Formulario">
-    <img class="Logo" src="imagens/ford.png" >
-    <h1 class="Login"> Login </h1>
-    <app-login-form >
-    </app-login-form>
+<div class="button-container">
+  <button (click)="openLoginModal()" class="action-button">Login</button>
 </div>
 
-<div>
+<div *ngIf="isLoginModalOpen" class="modal-overlay">
+  <div class="modal-content">
+    <button (click)="closeModal()" class="close-button">&times;</button>
+    <h1 class="Login">Login</h1>
+    <app-login-form></app-login-form>
+  </div>
 </div>
 

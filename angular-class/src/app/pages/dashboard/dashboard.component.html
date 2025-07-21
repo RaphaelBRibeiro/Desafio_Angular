@@ -1,7 +1,7 @@
 <div>
     <app-menu></app-menu>
 </div>
-<h1 class="Ford">DashBoard Ford</h1>
+<h1 class="Ford ">DashBoard Ford</h1>
 <hr>
 <section class="d-flex gap-3 justify-content-around "> 
     <div class="shadow border border-primary-subtle p-3"> 
@@ -24,12 +24,14 @@
 
 </section> 
 
+<div class="gradient-background d-flex align-items-center justify-content-center">
+    <div class="container text-center">
 
 <section>
     <img class="imagemCarro" src= "{{veiculoSelecionado.img }}">
 </section>
  
-<section >
+<section class="table-section">
     <app-car-table
      [vin]="veiculoSelecionado.vin"
      [lat]="vinInfos.lat"
@@ -39,11 +41,6 @@
      [status]="vinInfos.status"
      >
     </app-car-table>
-
-    <div class="fuel-bar-container">
-      <div class="fuel-bar" [style.width.%]="vinInfos.nivelCombustivel" [ngClass]="getFuelLevelClass()"></div>
-      <span class="fuel-percentage">{{ vinInfos.nivelCombustivel }}%</span>
-    </div>
-</section> 
+</section>       
 
 

@@ -55,16 +55,6 @@ export class DashboardComponent implements OnInit {
         })
   }
 
-  getFuelLevelClass(): string {
-    if (this.vinInfos.nivelCombustivel < 30) {
-      return 'fuel-red';
-    } else if (this.vinInfos.nivelCombustivel >= 30 && this.vinInfos.nivelCombustivel <= 69) {
-      return 'fuel-yellow';
-    } else {
-      return 'fuel-green';
-    }
-  }
-
   onChangeVin(){
     
   }

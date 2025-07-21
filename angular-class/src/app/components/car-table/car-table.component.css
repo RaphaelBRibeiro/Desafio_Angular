@@ -1,11 +1,67 @@
-.tabel thead{
-    background-color: blue;
-    color: white;
-    width: 100%;
+.fuel-bar-container {
+  width: 200px; /* Ajuste a largura conforme necessário */
+  height: 25px;
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block; /* Para alinhar com o texto */
+  vertical-align: middle;
+  margin-left: 5px;
+  background-color: rgb(255, 252, 252) !important;
 
 }
+.info, hr, th, td{
+  background-color: white;
+  border-color: black;
+  border: 1px solid black;
+}
 
-.tabel thead th{
-    background-color: blue;
-    color: white;
+.fuel-bar {
+  height: 100%;
+  border-radius: 7px;
+  transition: width 0.5s ease-in-out;
+}
+
+.fuel-red {
+  background-color: #ff4d4d;
+}
+
+.fuel-yellow {
+  background-color: #ffd700;
+}
+
+.fuel-green {
+  background-color: #4CAF50;
+}
+
+.fuel-percentage {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  line-height: 8px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.status-on {
+  background-color: green;
+  color: white; /* Para garantir contraste se houver texto */
+  min-width: 50px; /* Garante que a célula tenha um tamanho mínimo */
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-off {
+  background-color: red;
+  color: rgb(0, 0, 0); /* Para garantir contraste se houver texto */
+  min-width: 50px; /* Garante que a célula tenha um tamanho mínimo */
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

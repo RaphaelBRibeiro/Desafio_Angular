@@ -7,7 +7,7 @@
   display: inline-block; /* Para alinhar com o texto */
   vertical-align: middle;
   margin-left: 5px;
-  background-color: rgb(255, 252, 252) !important;
+  background-color: rgb(187, 187, 187) !important;
 
 }
 .info, hr, th, td{
@@ -23,15 +23,15 @@
 }
 
 .fuel-red {
-  background-color: #ff4d4d;
+  background-color: #ff0000;
 }
 
 .fuel-yellow {
-  background-color: #ffd700;
+  background-color: #ffd900;
 }
 
 .fuel-green {
-  background-color: #4CAF50;
+  background-color: #00c807;
 }
 
 .fuel-percentage {

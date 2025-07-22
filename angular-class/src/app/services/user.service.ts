@@ -1,39 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private users: User[] = [];
-  private readonly USERS_STORAGE_KEY = 'local_users';
+  private apiUrl = 'http://localhost:3001'; // URL da sua API
 
-  constructor() {
-    this.loadUsers();
+  constructor(private http: HttpClient) { }
+
+  login(username: string, passwordHash: string): Observable<User | null> {
+    return this.http.post<User | null>(`${this.apiUrl}/login`, { nome: username, senha: passwordHash });
   }
 
-  private loadUsers(): void {
-    const usersJson = localStorage.getItem(this.USERS_STORAGE_KEY);
-    if (usersJson) {
-      this.users = JSON.parse(usersJson);
-    }
-  }
-
-  private saveUsers(): void {
-    localStorage.setItem(this.USERS_STORAGE_KEY, JSON.stringify(this.users));
-  }
-
-  register(user: User): boolean {
-    if (this.users.some(u => u.username === user.username)) {
-      return false; // User already exists
-    }
-    this.users.push(user);
-    this.saveUsers();
-    return true;
-  }
-
-  login(username: string, passwordHash: string): User | null {
-    const user = this.users.find(u => u.username === username && u.password === passwordHash);
-    return user || null;
+  // Manter o método register se for necessário para o futuro, mas não será usado agora
+  register(user: User): Observable<any> {
+    return this.http.post(`${this.apiUrl}/register`, user);
   }
 }

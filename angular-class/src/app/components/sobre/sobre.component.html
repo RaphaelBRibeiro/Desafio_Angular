@@ -1,27 +1,22 @@
 <div class="container">
-  <div class="box">
+  <div class="box" (click)="openModal('Quem somos', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')">
     <h2 class="title">Quem somos</h2>
-    <p>
-      Na Ford, somos movidos por mais de um século de inovação e paixão. Desde 1903, redefinimos a mobilidade, colocando você no centro. Criamos veículos que oferecem segurança, desempenho e tecnologia de ponta, sempre pensando em melhorar sua vida.
-      Com presença global, nossa engenharia de ponta e compromisso com a qualidade garantem veículos robustos e confiáveis. Somos a Ford, construindo o futuro da mobilidade com um olhar no amanhã e os pés na nossa rica história.    </p>
   </div>
 
-  <div class="box">
+  <div class="box" (click)="openModal('Missão, Visão e Valores', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')">
     <h2 class="title">Missão, Visão e Valores</h2>
-    <p>
-      Nossa Missão é construir um mundo melhor através de mobilidade acessível e sustentável.
-      Nossa Visão é ser a empresa mais confiável e líder em mobilidade inteligente.
-      Guiam-nos Valores sólidos: Pessoas Primeiro, Uma Ford, Qualidade, Sustentabilidade e Integridade. Eles definem quem somos e impulsionam nossa inovação contínua.
-
-    </p>
+   
   </div>
 
-  <div class="box">
+  <div class="box" (click)="openModal('Compromisso com o Cliente', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.')">
     <h2 class="title">Compromisso com o Cliente</h2>
-    <p>
-      Vamos além de fabricar veículos, reimaginamos como você se move. Investimos em carros elétricos de ponta e em software e serviços que transformam sua experiência.
-      Na Ford, estamos moldando o futuro da mobilidade: mais inteligente, conectado e sustentável.
-      Enxergamos um futuro onde a Ford oferece tanto os veículos que você ama quanto as soluções de mobilidade integradas que você precisa. Um futuro mais eficiente, seguro e prazeroso, que estamos construindo hoje.    </p>
-      Nosso compromisso com a sustentabilidade é total, com foco em energias limpas e processos eco-friendly.
+  </div>
+</div>
+
+<div *ngIf="isModalOpen" class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button (click)="closeModal()" class="close-button">&times;</button>
+    <h2>{{ selectedTitle }}</h2>
+    <p>{{ selectedText }}</p>
   </div>
 </div>

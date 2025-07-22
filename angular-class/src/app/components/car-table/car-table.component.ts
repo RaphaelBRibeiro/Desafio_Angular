@@ -17,9 +17,9 @@ export class CarTableComponent {
   @Input() long: number = 0;
 
   getFuelColor(): string {
-    if (this.nivelCombustivel < 29) {
+    if (this.nivelCombustivel < 31) {
       return '#ff4d4d'; // red
-    } else if (this.nivelCombustivel >= 30 && this.nivelCombustivel <= 69) {
+    } else if (this.nivelCombustivel >= 32 && this.nivelCombustivel <= 69) {
       return '#ffd700'; // yellow
     } else {
       return '#4CAF50'; // green

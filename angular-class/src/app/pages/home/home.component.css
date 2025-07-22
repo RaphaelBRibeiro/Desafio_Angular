@@ -5,7 +5,7 @@
 
 .gradient-background {
   /* Gradiente linear */
-  background: linear-gradient(to top, #1f2225, #ffffff); /* Exemplo de laranja para pêssego */
+  background: linear-gradient(to top, #1f2225, #ffffff); 
  
   min-height: 100vh; /* Isso garante que o elemento tenha pelo menos a altura da tela */
   width: 100%;

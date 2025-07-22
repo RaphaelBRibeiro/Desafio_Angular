@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-menu',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css'
+  styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
   router = inject(Router);
@@ -14,6 +16,10 @@ export class MenuComponent {
   }
    goToHome() {
     this.router.navigate(['/home']); 
+  }
+
+  goToContact() {
+    this.router.navigate(['/contato']);
   }
 
   logout(){

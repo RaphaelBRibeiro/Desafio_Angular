@@ -29,5 +29,13 @@ export const routes: Routes = [
             return import ("./pages/dashboard/dashboard.component")
                 .then (c => c.DashboardComponent)
         }
+    },
+    {
+        path: "contato",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import ("./pages/contato/contato.component")
+                .then (c => c.ContatoComponent)
+        }
     }
 ];

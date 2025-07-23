@@ -27,3 +27,23 @@ a{
 .links,a{
  padding-top: 0px;
 }
+
+.facebook:hover img {
+  transform: scale(1.1); 
+  transition:ease-in-out 0.3s;
+}
+.instagram:hover img {
+  transform: scale(1.1); 
+  transition:ease-in-out 0.3s;
+}
+.twitter:hover img {
+  transform: scale(1.1); 
+  transition:ease-in-out 0.3s;
+}
+.youtube:hover img {
+  transform: scale(1.1); 
+  transition:ease-in-out 0.3s;
+  
+}
+
+

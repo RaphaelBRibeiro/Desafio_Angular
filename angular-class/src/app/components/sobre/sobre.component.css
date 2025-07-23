@@ -15,10 +15,11 @@
 }
 
 .box {
-  background-color: rgb(71, 114, 255);
+  background-color: rgb(70, 113, 255);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  margin: 20px;
   flex: 1;
   min-width: 280px; /* Minimum width for responsiveness */
   max-width: 350px; /* Maximum width to prevent boxes from becoming too wide */
@@ -27,6 +28,7 @@
   align-items: center;
   text-align: center;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .title {
@@ -92,6 +94,17 @@ p {
   }
 
   .box {
-    margin-bottom: 25px; /* Add spacing when stacked vertically */
+    margin-bottom: 30px; /* Add spacing when stacked vertically */
   }
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.box:hover img {
+  transform: scale(1.1); 
 }

@@ -1,3 +1,104 @@
+h1.Ford {
+    text-align: center;
+    color: #2c3e50; /* Azul escuro para o título */
+    margin: 40px 0 20px 0; /* Espaçamento superior e inferior */
+    font-weight: 700; /* Mais negrito para destaque */
+    font-size: 2.5em; /* Tamanho maior para o título */
+    letter-spacing: -0.5px; /* Ajuste para melhor leitura */
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #e0e0e0; /* Linha mais grossa e suave */
+    width: 60%; /* Largura da linha */
+    margin: 20px auto 40px auto; /* Centraliza e adiciona espaçamento */
+}
+
+.shadow {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada e profissional */
+}
+
+.border {
+    border: 1px solid #e0e0e0; /* Borda suave */
+}
+
+.border-primary-subtle {
+    border-color: #d1e7dd !important; /* Cor de borda suave (ex: verde-azulado claro) */
+}
+
+.p-3 {
+    padding: 20px !important; /* Aumenta o padding interno */
+}
+
+.p-2 {
+    padding: 15px !important; /* Aumenta o padding interno para cards menores */
+}
+
+section.d-flex {
+    display: flex; /* Já definido no HTML, mas reforçando */
+    gap: 30px; /* Aumenta o espaçamento entre os elementos */
+    justify-content: center; /* Centraliza os itens */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+    margin-bottom: 40px; /* Espaço abaixo desta seção */
+    padding: 0 20px; /* Padding lateral para evitar que toque as bordas */
+}
+
+/* Estilo para a div de Veículos (onde está o select) */
+section.d-flex > div:first-child {
+    background-color: #ffffff; /* Fundo branco para a caixa */
+    border-radius: 10px; /* Cantos arredondados */
+    min-width: 280px; /* Largura mínima para a caixa do select */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.d-flex > div:first-child h2 {
+    color: #495057; /* Cor do título da caixa */
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+select {
+    width: 80%; /* Ocupa a largura total da div */
+    padding: 12px 15px; /* Padding interno */
+    border: 1px solid #ced4da; /* Borda padrão */
+    border-radius: 8px; /* Cantos arredondados */
+    background-color: #f8f9fa; /* Fundo levemente cinza */
+    font-size: 1em;
+    color: #495057;
+    appearance: none; /* Remove o estilo padrão do navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="%23495057" d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592c.859 0 1.319 1.013.753 1.658L8.753 11.14a1 1 0 0 1-1.506 0z"/></svg>'); /* Seta customizada */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #007bff; /* Borda azul ao focar */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra suave ao focar */
+    outline: none; /* Remove o outline padrão */
+}
+
+app-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 100px; /* Largura mínima para os cards */
+    max-width: 400px;
+    flex-grow: 1; /* Permite que os cards cresçam para preencher espaço */
+}
 
 .Ford {
   text-align: center;
@@ -10,11 +111,13 @@
 .gradient-background {
   /* Gradiente linear */
   background: linear-gradient(to top, #1f2225, #ffffff); /* Exemplo de laranja para pêssego */
- 
+  margin-top: 40px;
+  padding: 60px 20px;
   min-height: 100vh; /* Isso garante que o elemento tenha pelo menos a altura da tela */
   width: 100%;
 }
 
 .imagemCarro{ 
   background-color: transparent;
+  width: 80%;
 }

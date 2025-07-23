@@ -1,89 +1,90 @@
 section {
-    padding: 30px; /* Espaçamento interno */
-    margin-top: 20px; /* Margem superior para separar de outros elementos */
-    background-color: #ffffff; /* Fundo branco para a seção */
-    border-radius: 10px; /* Cantos arredondados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para profundidade */
-    max-width: 1200px; /* Largura máxima para centralizar */
+    padding: 30px; 
+    margin-top: 20px; 
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    max-width: 1200px; 
     margin-left: auto;
     margin-right: auto;
-    box-sizing: border-box; /* Inclui padding e border na largura/altura */
-    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+    box-sizing: border-box; 
+    overflow-x: auto; 
 }
 
 .table {
-    width: 100%; /* A tabela ocupa 100% da largura do seu contêiner */
-    border-collapse: collapse; /* Remove o espaçamento entre as bordas das células */
-    margin-top: 20px; /* Margem superior para separar do título da seção, se houver */
-    font-family: 'Inter', sans-serif; /* Aplica a fonte Inter */
-    color: #333; /* Cor de texto padrão */
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+    font-family: 'Inter', sans-serif; 
+    color: #333; 
 }
 .table th {
-    padding: 15px 20px; /* Padding generoso para os cabeçalhos */
-    text-align: left; /* Alinha o texto à esquerda */
-    color: #495057; /* Cor de texto mais escura para cabeçalhos */
-    font-weight: 600; /* Mais negrito */
-    text-transform: uppercase; /* Texto em maiúsculas */
-    font-size: 0.9em; /* Tamanho da fonte ligeiramente menor */
-    /* A borda será sobrescrita pela regra .info, hr, th, td */
-    /* border-bottom: 2px solid #e9ecef; */
+    padding: 15px 20px; 
+    text-align: left; 
+    color: #495057; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 0.9em; 
 }
+
 .table tbody .info {
-    background-color: #ffffff; /* Fundo branco para as linhas de dados */
+    background-color: #ffffff; 
 }
+
 .table td {
-    padding: 12px 20px; /* Padding para as células de dados */
-    /* A borda será sobrescrita pela regra .info, hr, th, td */
-    /* border-bottom: 1px solid #e9ecef; */
-    vertical-align: middle; /* Alinha o conteúdo verticalmente ao meio */
-    font-size: 0.95em; /* Tamanho da fonte */
+    padding: 12px 20px; 
+    vertical-align: middle; 
+    font-size: 0.95em; 
 }
 .info, hr, th, td {
     background-color: white;
     border-color: black;
-    border: 1px solid black; /* Aplica bordas sólidas pretas a todos */
+    border: 1px solid black; 
 }
 
 .table tbody tr:hover {
-    background-color: #f1f3f5; /* Fundo suave ao passar o mouse na linha */
-    transition: background-color 0.2s ease-in-out; /* Transição suave */
+    background-color: #f1f3f5; 
+    transition: background-color 0.2s ease-in-out; 
 }
 .table td input[type="text"] {
-    width: 100%; /* Ocupa a largura total da célula */
-    padding: 8px 0; /* Ajusta o padding para o input */
-    border: none; /* Remove a borda do input */
-    background-color: transparent; /* Fundo transparente para se misturar com a célula */
-    font-size: 0.95em; /* Tamanho da fonte igual ao da célula */
-    color: #333; /* Cor do texto */
-    outline: none; /* Remove o outline ao focar */
-    cursor: default; /* Mantém o cursor padrão, pois é apenas para exibição */
+    width: 100%; 
+    padding: 8px 0; 
+    border: none; 
+    background-color: transparent; 
+    font-size: 0.95em; 
+    color: #333; 
+    outline: none; 
+    cursor: default; 
 }
 
 .fuel-bar-container {
-  width: 200px; /* Ajuste a largura conforme necessário */
+  width: 200px; 
   height: 25px;
   border-radius: 7px;
   overflow: hidden;
   position: relative;
-  display: inline-block; /* Para alinhar com o texto */
+  display: inline-block; 
   vertical-align: middle;
   margin-left: 5px;
   background-color: rgb(187, 187, 187) !important;
 
 }
 .info, hr, th, td{
-  background-color: white;
+  background-color: transparent;
   border-color: black;
   border: 1px solid black;
 }
+.tabela{
+  background-color: transparent
+}
 
 .fuel-bar {
-    height: 100%; /* A barra de preenchimento ocupa a altura total do container */
-    border-radius: 7px; /* Cantos arredondados */
+    height: 100%; 
+    border-radius: 7px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Transição suave para largura e cor */
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out; 
 }
 
 .fuel-red {
@@ -112,8 +113,8 @@ section {
 
 .status-on {
   background-color: green;
-  color: white; /* Para garantir contraste se houver texto */
-  min-width: 50px; /* Garante que a célula tenha um tamanho mínimo */
+  color: white; 
+  min-width: 50px; 
   min-height: 30px;
   display: flex;
   align-items: center;
@@ -122,10 +123,11 @@ section {
 
 .status-off {
   background-color: red;
-  color: rgb(0, 0, 0); /* Para garantir contraste se houver texto */
-  min-width: 50px; /* Garante que a célula tenha um tamanho mínimo */
+  color: rgb(0, 0, 0); 
+  min-width: 50px; 
   min-height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+

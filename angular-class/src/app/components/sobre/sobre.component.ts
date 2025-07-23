@@ -12,14 +12,17 @@ export class SobreComponent {
   isModalOpen = false;
   selectedTitle = '';
   selectedText = '';
+  selectedImageUrl = '';
 
-  openModal(title: string, text: string) {
+  openModal(title: string, text: string, imageUrl: string) {
     this.isModalOpen = true;
     this.selectedTitle = title;
     this.selectedText = text;
+    this.selectedImageUrl = imageUrl;
   }
 
   closeModal() {
     this.isModalOpen = false;
   }
 }
+/*(title: imageUrl: string, text: string, imageUrl: string)*/

@@ -1,0 +1,43 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Usuário</label>
+    <input id="username" formControlName="username">
+    <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
+      <small>Usuário é obrigatório.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="email">E-mail</label>
+    <input id="email" formControlName="email">
+    <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+      <small>E-mail inválido.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="cpf">CPF</label>
+    <input id="cpf" formControlName="cpf">
+    <div *ngIf="registerForm.get('cpf')?.invalid && registerForm.get('cpf')?.touched">
+      <small>CPF deve conter 11 dígitos.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="password">Senha</label>
+    <input id="password" type="password" formControlName="password">
+    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+      <small>Senha deve ter no mínimo 6 caracteres.</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="confirmPassword">Confirmar Senha</label>
+    <input id="confirmPassword" type="password" formControlName="confirmPassword">
+    <div *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmPassword')?.touched">
+      <small>As senhas não coincidem.</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="registerForm.invalid">Cadastrar</button>
+</form>

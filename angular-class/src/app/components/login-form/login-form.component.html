@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" *ngIf="!isRegisterMode">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
   <!--campos do login - Usuario -->
   <div class="mb-3">
     <label for="usernameLogin" class="form-label">Usuário</label>
@@ -19,28 +19,5 @@
 
 <!--campos do login - COnfirmar & Cadastro -->
   <button type="submit" class="btn btn-primary w-100">Login</button>
-  <button type="button" class="cadastro" (click)="toggleMode()">Não tem conta? Cadastre-se</button>
-</form>
-
-<!--campos de Cadastro  - Usuario com validação de cadastro do Usuario -->
-<form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()" *ngIf="isRegisterMode">
-  <div class="mb-3">
-    <label for="usernameRegister" class="form-label">Usuário</label>
-    <input type="text" class="form-control" id="usernameRegister" formControlName="username">
-    <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="text-danger">
-      Usuário é obrigatório.
-    </div>
-  </div>
-
-  <!--campos de Cadastro  - Senha com validação de cadastro da Senha-->
-  <div class="mb-3">
-    <label for="passwordRegister" class="form-label">Senha</label>
-    <input type="password" class="form-control" id="passwordRegister" formControlName="password">
-    <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="text-danger">
-      Senha é obrigatória.
-    </div>
-  </div>
   
-  <button type="submit" class="btn btn-success w-100">Cadastrar</button>
-  <button type="button" class="btn btn-link w-100 mt-2" (click)="toggleMode()">Já tem conta? Faça login</button>
 </form>

@@ -22,6 +22,10 @@ export class MenuComponent {
     this.router.navigate(['/contato']);
   }
 
+  goToAboutUs() {
+    this.router.navigate(['/quem-somos']);
+  }
+
   logout(){
     sessionStorage.clear()
     this.router.navigate([""])

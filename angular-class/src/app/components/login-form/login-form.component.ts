@@ -1,8 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/user.service';
-import { User } from '../../models/user';
+import { LoginService } from '../../services/login.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,16 +12,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login-form.component.css'
 })
 export class LoginFormComponent {
-  userService = inject(UserService);
+  loginService = inject(LoginService);
   router = inject(Router);
-  isRegisterMode: boolean = false;
 
   loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-  });
-
-  registerForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
@@ -34,8 +27,9 @@ export class LoginFormComponent {
       alert('Preencha todos os campos');
       return;
     }
+    
 
-    this.userService.login(username, password).subscribe({
+    this.loginService.login(username, password).subscribe({
       next: (loggedInUser) => {
         if (loggedInUser) {
           sessionStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
@@ -49,32 +43,5 @@ export class LoginFormComponent {
         alert('Erro ao tentar fazer login. Verifique se o servidor da API está rodando e as credenciais estão corretas.');
       }
     });
-  }
-
-  onSubmitRegister() {
-    const { username, password } = this.registerForm.value;
-
-    if (!this.registerForm.valid || !username || !password) {
-      alert('Preencha todos os campos');
-      return;
-    }
-
-    const newUser: User = { username, password }; // In a real app, hash the password here
-    const registered = this.userService.register(newUser);
-
-    if (registered) {
-      alert('Cadastro realizado com sucesso! Faça login.');
-      this.isRegisterMode = false; // Switch to login mode
-      this.loginForm.reset();
-      this.registerForm.reset();
-    } else {
-      alert('Usuário já existe.');
-    }
-  }
-
-  toggleMode() {
-    this.isRegisterMode = !this.isRegisterMode;
-    this.loginForm.reset();
-    this.registerForm.reset();
   }
 }

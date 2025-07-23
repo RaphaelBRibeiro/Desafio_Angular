@@ -37,5 +37,13 @@ export const routes: Routes = [
             return import ("./pages/contato/contato.component")
                 .then (c => c.ContatoComponent)
         }
+    },
+    {
+        path: "quem-somos",
+        pathMatch: "full",
+        loadComponent: () => {
+            return import ("./pages/quem-somos/quem-somos.component")
+                .then (c => c.QuemSomosComponent)
+        }
     }
 ];

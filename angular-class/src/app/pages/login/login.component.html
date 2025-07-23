@@ -9,6 +9,17 @@
     <button (click)="closeModal()" class="close-button">&times;</button>
     <h1 class="Login">Login</h1>
     <app-login-form></app-login-form>
+    <div class="switch-form">
+      <span>Não tem conta? <a (click)="switchToRegister()">Cadastre-se</a></span>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isRegisterModalOpen" class="modal-overlay">
+  <div class="modal-content">
+    <button (click)="closeModal()" class="close-button">&times;</button>
+    <h1 class="Login">Cadastro</h1>
+    <app-register-form></app-register-form>
   </div>
 </div>
 

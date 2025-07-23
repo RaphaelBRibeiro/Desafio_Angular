@@ -1,3 +1,10 @@
+.modal-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -45,6 +52,18 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.shelby{
+  width: 350px;
+  height: 200px;
+}
+.mach{
+  width: 300px;
+  height: 200px;
+}
+.storm{
+  width: 350px;
+  height: 200px;
 }
 
 .modal-content {

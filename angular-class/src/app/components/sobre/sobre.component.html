@@ -1,21 +1,27 @@
 <div class="container">
-  <div class="box" (click)="openModal('Quem somos', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')">
-    <h2 class="title">Quem somos</h2>
+  <div class="box" (click)="openModal('Ford Shelby GT', 
+      'Prepare-se para o Ford Shelby GT 2017, um verdadeiro ícone da engenharia automotiva. Com sua propulsão a combustão e 2 portas, este carro é pura emoção. Seu motor V8 em V e tração traseira garantem uma performance visceral, controlada por um câmbio manual de 6 marchas. A direção elétrica oferece precisão inigualável. Acelere de 0 a 100 km/h em apenas 4,4 segundos, confiando nos potentes freios a disco ventilado. O Shelby GT é a combinação perfeita de potência, estilo e adrenalina.',
+      'imagens/Ford-Shelby-GT.png')">
+    <img class="shelby" src="imagens/Ford-Shelby-GT.png" alt="">
   </div>
 
-  <div class="box" (click)="openModal('Missão, Visão e Valores', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.')">
-    <h2 class="title">Missão, Visão e Valores</h2>
-   
+  <div class="box" (click)="openModal('test',
+      'Conheça o Ford Mustang Mach-E 2024, o SUV que une o legado Mustang à inovação elétrica. Com propulsão elétrica/híbrida, ele é ágil e sustentável. Leva 5 ocupantes e acelera de 0 a 100 km/h em 3,7 segundos, alcançando 200 km/h de velocidade máxima. Sua tração 4x4 e os freios ABS garantem total controle e segurança. O Mach-E não é apenas um carro, é o futuro emocionante da mobilidade.'
+      , 'imagens/Ford-Mustang-Mach-E.jpg')">
+    <img class="mach" src="imagens/Ford-Mustang-Mach-E.jpg" alt="">
   </div>
 
-  <div class="box" (click)="openModal('Compromisso com o Cliente', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.')">
-    <h2 class="title">Compromisso com o Cliente</h2>
-  </div>
+  <div class="box" (click)="openModal('Compromisso com o Cliente', 
+      'Apresentamos o Ford Storm 2025, a picape robusta e tecnológica para suas maiores aventuras. Com propulsão a Diesel, ela oferece força e eficiência. Seu câmbio automático de 6 marchas garante trocas suaves, enquanto a tração 4x4 domina qualquer terreno. A direção elétrica e o computador de bordo proporcionam conforto e controle. Para viagens longas, conte com o piloto automático. O Storm 2025 é a combinação perfeita de força e inteligência para suas jornadas.'
+      , 'imagens/Ford-Storm.png')">
+    <img class="storm" src="imagens/Ford-Storm.png" alt="">
+  </div>  
 </div>
 
 <div *ngIf="isModalOpen" class="modal-overlay" (click)="closeModal()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <button (click)="closeModal()" class="close-button">&times;</button>
+    <img [src]="selectedImageUrl" alt="Imagem do Modal" class="modal-image">
     <h2>{{ selectedTitle }}</h2>
     <p>{{ selectedText }}</p>
   </div>

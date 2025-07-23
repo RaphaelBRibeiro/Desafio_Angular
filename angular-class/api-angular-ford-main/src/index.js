@@ -10,6 +10,42 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "..", "public/img")));
 
+// Array para armazenar usuários cadastrados (em memória, para fins de exemplo)
+const users = [];
+
+app.post("/register", (req, res) => {
+    try {
+        const { username, email, password } = req.body;
+
+        if (!username || !email || !password) {
+            return res.status(400).json({
+                message: "Todos os campos (username, email, password) são obrigatórios!"
+            });
+        }
+
+        // Verificar se o usuário já existe
+        if (users.some(u => u.username === username || u.email === email)) {
+            return res.status(409).json({
+                message: "Usuário ou e-mail já cadastrado!"
+            });
+        }
+
+        const newUser = { id: users.length + 1, username, email, password };
+        users.push(newUser);
+
+        return res.status(201).json({
+            message: "Usuário cadastrado com sucesso!",
+            user: { id: newUser.id, username: newUser.username, email: newUser.email }
+        });
+
+    } catch (error) {
+        console.error("Erro no registro:", error);
+        return res.status(500).json({
+            message: "Falha na comunicação com o servidor!"
+        });
+    }
+});
+
 app.post("/login", (req, res) => {
     try {
         const { nome, senha } = req.body
@@ -20,16 +56,27 @@ app.post("/login", (req, res) => {
             });
         }
 
-        if (nome !== "admin" || senha !== "123") {
-            return res.status(401).json({
-                message: "O nome de usuário ou senha está incorreto ou não foi cadastrado!"
+        // Verificar credenciais de admin
+        if (nome === "admin" && senha === "123") {
+            return res.status(200).json({
+                id: 1,
+                username: "admin",
+                email: "admin@email.com"
             });
         }
 
-        return res.status(200).json({
-            id: 1,
-            nome: "admin",
-            email: "admin@email.com"
+        // Verificar credenciais de usuários cadastrados
+        const foundUser = users.find(u => u.username === nome && u.password === senha);
+        if (foundUser) {
+            return res.status(200).json({
+                id: foundUser.id,
+                username: foundUser.username,
+                email: foundUser.email
+            });
+        }
+
+        return res.status(401).json({
+            message: "O nome de usuário ou senha está incorreto ou não foi cadastrado!"
         });
 
     } catch (error) {

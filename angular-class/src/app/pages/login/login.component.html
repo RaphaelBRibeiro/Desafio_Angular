@@ -1,7 +1,11 @@
 <div class="background-image"></div>
 
-<div class="button-container">
-  <button (click)="openLoginModal()" class="action-button">Login</button>
+<div class="main-content-box"> <div class="button-container">
+    <button (click)="openLoginModal()" class="action-button login-button-with-logo">
+      <img src="imagens/ford.png" alt="Logo da Empresa" class="button-logo">
+      <h1>Login</h1>
+    </button>
+  </div>
 </div>
 
 <div *ngIf="isLoginModalOpen" class="modal-overlay">

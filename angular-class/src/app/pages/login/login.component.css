@@ -12,61 +12,6 @@
     
 }
 
-.action-button.login-button-with-logo {
-  display: flex; /* Mantemos flex para usar flex-direction */
-  flex-direction: column; /* Isso empilha os itens verticalmente */
-  align-items: center; /* Centraliza a logo e o texto horizontalmente dentro do botão */
-  justify-content: center; /* Centraliza verticalmente o conteúdo, se o botão tiver altura fixa */
-  gap: 5px; /* Adiciona um pequeno espaço entre a logo e o texto */
-  padding: 15px 25px; /* Ajuste o padding para dar mais espaço, se necessário */
-  font-size: 1.2em; /* Tamanho da fonte */
-  background-color: #007bff; /* Cor de fundo do botão */
-  color: white; /* Cor do texto */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-align: center; /* Garante que o texto fique centralizado se ocupar mais de uma linha */
-}
-
-.action-button.login-button-with-logo h1 {
-  margin: 0; 
-  font-size: 1em; 
-  color: rgb(255, 255, 255); 
-  font-weight: normal; 
-}
-
-.action-button.login-button-with-logo:hover {
-  background-color: #0056b3;
-}
-
-.button-logo {
-  height: 40px; 
-  width: auto; 
-  margin-right: 5px; 
-  margin-bottom: 5px;
-}
-
-.button-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  display: flex;
-  gap: 1rem;
-}
-
-.action-button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  background-color: #003478;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .modal-overlay {
   position: fixed;
   top: 0;

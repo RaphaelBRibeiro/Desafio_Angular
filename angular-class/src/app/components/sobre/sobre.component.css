@@ -76,6 +76,15 @@ p {
   max-width: 500px;
 }
 
+.modal-content p {
+  font-family: 'Roboto', Arial, sans-serif; /* Define a fonte para o parágrafo */
+  text-align: justify; /* Justifica o texto */
+  font-size: 1em; /* Tamanho da fonte padrão, ajuste se precisar */
+  color: #555; /* Cor do texto para o parágrafo */
+  margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
+  line-height: 1.7; /* Aumenta o espaçamento entre as linhas para melhor leitura */
+}
+
 .close-button {
   position: absolute;
   top: 10px;

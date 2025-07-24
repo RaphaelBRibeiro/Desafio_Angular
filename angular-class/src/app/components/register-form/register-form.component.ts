@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -13,13 +14,14 @@ import { UserService } from '../../services/user.service';
 export class RegisterFormComponent {
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserService) {
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       cpf: ['', [Validators.required, Validators.pattern(/^[0-9]{11}$/)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
+      terms: [false, Validators.requiredTrue]
     }, { validator: this.passwordMatchValidator });
   }
 
@@ -36,7 +38,7 @@ export class RegisterFormComponent {
         next: (response) => {
           console.log('Cadastro realizado com sucesso!', response);
           alert('Cadastro realizado com sucesso!');
-          // Você pode adicionar lógica para fechar o modal ou redirecionar aqui
+          this.router.navigate(['/login']);
         },
         error: (error) => {
           console.error('Erro no cadastro:', error);
@@ -46,5 +48,9 @@ export class RegisterFormComponent {
     } else {
       console.log('Formulário inválido');
     }
+  }
+
+  onBack() {
+    this.router.navigate(['/login']);
   }
 }

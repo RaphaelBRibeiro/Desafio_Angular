@@ -1,16 +1,7 @@
 <div class="background-image"></div>
 
-<div class="main-content-box"> <div class="button-container">
-    <button (click)="openLoginModal()" class="action-button login-button-with-logo">
-      <img src="imagens/ford.png" alt="Logo da Empresa" class="button-logo">
-      <h1>Login</h1>
-    </button>
-  </div>
-</div>
-
-<div *ngIf="isLoginModalOpen" class="modal-overlay">
+<div class="formulario d-flex h-100 justify-content-center align-items-center">
   <div class="modal-content">
-    <button (click)="closeModal()" class="close-button">&times;</button>
     <h1 class="Login">Login</h1>
     <app-login-form></app-login-form>
     <div class="switch-form">
@@ -26,6 +17,3 @@
     <app-register-form></app-register-form>
   </div>
 </div>
-
-
-

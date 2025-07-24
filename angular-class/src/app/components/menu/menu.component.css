@@ -44,3 +44,72 @@
 .header{
 position: fixed;
 }
+
+.offcanvas-body {
+  padding: 20px; /* Add some padding around the content */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items vertically */
+  gap: 15px; /* Space between buttons */
+}
+
+.offcanvas-body .btn-primary {
+  background-color: #007bff; /* A standard blue */
+  color: white; /* White text for contrast */
+  border: none; /* No border for a cleaner look */
+  padding: 12px 20px; /* Comfortable padding */
+  border-radius: 8px; /* Slightly rounded corners */
+  font-size: 1rem; /* Readable font size */
+  font-weight: 500; /* Medium font weight */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover/active states */
+  text-align: center; /* Center the text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.offcanvas-body .btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+.offcanvas-body .btn-primary:active {
+  background-color: #004085; /* Even darker blue when pressed */
+  transform: translateY(0); /* Return to original position */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Original shadow */
+}
+
+.offcanvas-body .logout.btn-danger {
+  background-color: #dc3545; /* A standard red for danger actions */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  margin-top: auto; /* Pushes the logout button to the bottom if the flex container allows it */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas-body .logout.btn-danger:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.offcanvas-body .logout.btn-danger:active {
+  background-color: #bd2130; /* Even darker red when pressed */
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .offcanvas-body {
+    padding: 15px; /* Slightly less padding on smaller screens */
+  }
+
+  .offcanvas-body .btn {
+    font-size: 0.95rem; /* Slightly smaller font for buttons */
+    padding: 10px 15px; /* Adjust padding */
+  }
+}

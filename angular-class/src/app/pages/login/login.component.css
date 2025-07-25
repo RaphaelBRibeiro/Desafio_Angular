@@ -49,7 +49,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('/imagens/Yellow-Ford-Focus-ST.jpg'); /* ajuste para a sua imagem */
+  background-image: url('/imagens/Yellow-Ford-Focus-ST.jpg');
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -77,6 +77,6 @@
 }
 
 .switch-form a:hover {
-    color: #0056b3; /* Cor azul mais escura ao passar o mouse */
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    color: #0056b3;
+    text-decoration: underline;
 }

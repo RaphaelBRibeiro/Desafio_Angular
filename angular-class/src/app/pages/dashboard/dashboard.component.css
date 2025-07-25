@@ -1,54 +1,54 @@
 h1.Ford {
     text-align: center;
-    color: #2c3e50; /* Azul escuro para o título */
-    margin: 40px 0 20px 0; /* Espaçamento superior e inferior */
-    font-weight: 700; /* Mais negrito para destaque */
-    font-size: 2.5em; /* Tamanho maior para o título */
-    letter-spacing: -0.5px; /* Ajuste para melhor leitura */
+    color: #2c3e50; 
+    margin: 40px 0 20px 0; 
+    font-weight: 700; 
+    font-size: 2.5em; 
+    letter-spacing: -0.5px; 
 }
 
 hr {
     border: none;
-    border-top: 2px solid #e0e0e0; /* Linha mais grossa e suave */
-    width: 60%; /* Largura da linha */
-    margin: 20px auto 40px auto; /* Centraliza e adiciona espaçamento */
+    border-top: 2px solid #e0e0e0; 
+    width: 60%; 
+    margin: 20px auto 40px auto;
 }
 
 .shadow {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada e profissional */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .border {
-    border: 1px solid #e0e0e0; /* Borda suave */
+    border: 1px solid #e0e0e0;
 }
 
 .border-primary-subtle {
-    border-color: #d1e7dd !important; /* Cor de borda suave (ex: verde-azulado claro) */
+    border-color: #d1e7dd !important;
 }
 
 .p-3 {
-    padding: 20px !important; /* Aumenta o padding interno */
+    padding: 20px !important;
 }
 
 .p-2 {
-    padding: 15px !important; /* Aumenta o padding interno para cards menores */
+    padding: 15px !important; 
 }
 
 section.d-flex {
-    display: flex; /* Já definido no HTML, mas reforçando */
-    gap: 30px; /* Aumenta o espaçamento entre os elementos */
-    justify-content: center; /* Centraliza os itens */
-    align-items: flex-start; /* Alinha os itens ao topo */
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
-    margin-bottom: 40px; /* Espaço abaixo desta seção */
-    padding: 0 20px; /* Padding lateral para evitar que toque as bordas */
+    display: flex; 
+    gap: 30px; 
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    padding: 0 20px;
 }
 
-/* Estilo para a div de Veículos (onde está o select) */
+
 section.d-flex > div:first-child {
-    background-color: #ffffff; /* Fundo branco para a caixa */
-    border-radius: 10px; /* Cantos arredondados */
-    min-width: 280px; /* Largura mínima para a caixa do select */
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,21 +56,21 @@ section.d-flex > div:first-child {
 }
 
 section.d-flex > div:first-child h2 {
-    color: #495057; /* Cor do título da caixa */
+    color: #495057;
     margin-bottom: 15px;
     font-size: 1.5em;
     font-weight: 600;
 }
 
 select {
-    width: 80%; /* Ocupa a largura total da div */
-    padding: 12px 15px; /* Padding interno */
-    border: 1px solid #ced4da; /* Borda padrão */
-    border-radius: 8px; /* Cantos arredondados */
-    background-color: #f8f9fa; /* Fundo levemente cinza */
+    width: 80%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px; 
+    background-color: #f8f9fa;
     font-size: 1em;
     color: #495057;
-    appearance: none; /* Remove o estilo padrão do navegador */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="%23495057" d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592c.859 0 1.319 1.013.753 1.658L8.753 11.14a1 1 0 0 1-1.506 0z"/></svg>'); /* Seta customizada */
@@ -82,9 +82,9 @@ select {
 }
 
 select:focus {
-    border-color: #007bff; /* Borda azul ao focar */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra suave ao focar */
-    outline: none; /* Remove o outline padrão */
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
 }
 
 app-card {
@@ -95,9 +95,9 @@ app-card {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-width: 100px; /* Largura mínima para os cards */
+    min-width: 100px;
     max-width: 400px;
-    flex-grow: 1; /* Permite que os cards cresçam para preencher espaço */
+    flex-grow: 1;
 }
 
 .Ford {
@@ -105,15 +105,15 @@ app-card {
 }
 
 .table-section {
-  margin-bottom: 50px; /* Ajuste este valor para o espaçamento desejado */
+  margin-bottom: 50px; 
 }
 
 .gradient-background {
   /* Gradiente linear */
-  background: linear-gradient(to top, #1f2225, #ffffff); /* Exemplo de laranja para pêssego */
+  background: linear-gradient(to top, #1f2225, #ffffff);
   margin-top: 40px;
   padding: 60px 20px;
-  min-height: 100vh; /* Isso garante que o elemento tenha pelo menos a altura da tela */
+  min-height: 100vh;
   width: 100%;
 }
 
